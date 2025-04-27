@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function addTask(taskText) {
         const listItem = document.createElement('li');
         listItem.textContent = taskText;
+
+        // Add delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() {
+            listItem.remove();
+        }
+        listItem.appendChild(deleteButton);
+
         taskList.appendChild(listItem);
     }
 });
